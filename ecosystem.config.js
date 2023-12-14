@@ -3,7 +3,7 @@ module.exports = {
         {
             name: 'chat',
             port: '3000',
-            script: './app.js',
+            script: 'app.js',
         }
     ],
     deploy: {
@@ -13,7 +13,7 @@ module.exports = {
             ref: 'origin/main',
             repo: 'git@github.com:nux7jr/socketIO.git',
             ssh_options: ['ForwardAgent=yes'],
-            path: '/var/www/socketIO/',
+            path: '/home/mike/projects/socketIO',
             "pre-deploy": "git fetch --all",
             "clear-path": "cd ~",
             'post-deploy': 'yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production setup'
