@@ -14,9 +14,8 @@ module.exports = {
             repo: 'git@github.com:nux7jr/socketIO.git',
             ssh_options: ['ForwardAgent=yes'],
             path: '/var/www/socketIO/',
-            "pre-deploy": "git fetch --all",
-            "clear-path": "cd ~",
-            'post-deploy': 'yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production setup'
+            'pre-deploy-local': 'yarn',
+            'post-deploy': 'git fetch --all && yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production',
         }
     }
 }
