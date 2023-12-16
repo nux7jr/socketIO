@@ -3,12 +3,12 @@ module.exports = {
         {
             name: 'chat',
             port: '3000',
-            script: 'app.js',
+            script: './app.js',
             max_memory_restart: "300M",
 
             // Logging
-            out_file: "./out.log",
-            error_file: "./error.log",
+            out_file: "./logs/out.log",
+            error_file: "./logs/error.log",
             merge_logs: true,
             log_date_format: "DD-MM HH:mm:ss Z",
             log_type: "json",
@@ -16,12 +16,12 @@ module.exports = {
     ],
     deploy: {
         production: {
-            user: 'root',
+            user: 'mike',
             host: ['213.110.228.1'],
             ref: 'origin/main',
             repo: 'git@github.com:nux7jr/socketIO.git',
             ssh_options: ['ForwardAgent=yes'],
-            path: '/var/www/socketIO/',
+            path: '/home/mike/projects/socketIO',
             'pre-deploy-local': 'yarn',
             'post-deploy': 'git fetch --all && yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production',
         }
