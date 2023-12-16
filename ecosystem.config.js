@@ -21,7 +21,7 @@ module.exports = {
             ref: 'origin/main',
             repo: 'git@github.com:nux7jr/socketIO.git',
             ssh_options: ['ForwardAgent=yes'],
-            path: '/',
+            path: '/home/mike/projects/socketIO',
             'pre-deploy-local': 'yarn',
             'post-deploy': 'pwd',
             // 'post-deploy': 'git fetch --all && yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production',
