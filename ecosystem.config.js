@@ -23,7 +23,8 @@ module.exports = {
             ssh_options: ['ForwardAgent=yes'],
             path: '/home/mike/projects/socketIO',
             'pre-deploy-local': 'yarn',
-            'post-deploy': 'git fetch --all && yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production',
+            'post-deploy': 'pwd',
+            // 'post-deploy': 'git fetch --all && yarn && yarn build && pm2 startOrRestart ecosystem.config.js --env production',
             'post-setup': 'ls -la', // Добавляем команду для вывода содержимого папки после настройки
             'ssh_options': 'StrictHostKeyChecking=no', // Добавляем опцию SSH для избежания проблем с ключами
             shallow_clone: true, // Используем shallow clone
