@@ -23,7 +23,7 @@ module.exports = {
             ssh_options: ['ForwardAgent=yes'],
             path: '/home/mike/projects/socketIO',
             'pre-deploy-local': 'yarn',
-            'post-deploy': 'git fetch --all && yarn && pm2 startOrRestart ecosystem.config.js --env production',
+            'post-deploy': 'git fetch --all && yarn && pm2 startOrRestart /home/mike/projects/socketIO/ecosystem.config.js --env production',
         }
     }
 }
