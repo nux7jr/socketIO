@@ -14,7 +14,7 @@ module.exports = {
     ],
     deploy: {
         production: {
-            user: 'pm2',
+            user: 'root',
             host: ['213.110.228.1'],
             ref: 'origin/main',
             repo: 'git@github.com:nux7jr/socketIO.git',
